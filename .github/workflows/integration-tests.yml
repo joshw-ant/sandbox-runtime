@@ -86,6 +86,11 @@ jobs:
         shell: pwsh
         run: pwsh vendor/srt-win/ci/smoke-exec.ps1 vendor\srt-win\target\release\srt-win.exe
 
+      - name: Smoke-test srt-win acl (Windows)
+        if: matrix.os == 'windows'
+        shell: pwsh
+        run: pwsh vendor/srt-win/ci/smoke-acl.ps1 vendor\srt-win\target\release\srt-win.exe
+
       - name: TS integration tests (Windows)
         if: matrix.os == 'windows'
         shell: pwsh
